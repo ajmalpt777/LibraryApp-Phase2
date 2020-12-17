@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+    
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a href="<%=nav[2].link%>"><%=nav[2].name%></a>
+        </li>
+        <li>
+          <a href="<%=nav[3].link%>"><%=nav[3].name%></a>
+        </li>
+       
+      </ul>
+    
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Sign In
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+    <div class="col-md-3"></div>
+    
+          
+          
+          
+          <!--/stories-->
+          <!-- <div class="row">    
+            <br>
+            <div class="col-md-2 col-sm-3 text-center">
+              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
+            </div>
+            <div class="col-md-10 col-sm-9">
+              <h3>Repurpose Content to Reach a Wider Audience</h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <h4><span class="label label-default">97thfloor.com</span></h4><h4>
+                  <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
+                  </h4></div>
+                <div class="col-xs-3"></div>
+              </div>
+              <br><br>
+            </div>
+          </div>
+          <hr> -->
+
+        
+              <form method="POST" action='/signin/add' id="form1" onsubmit="return validate()">
+                <!-- onsubmit="event.preventDefault();" -->
+                <div class="form-group">
+                  <label for="username" id="label1">User Name</label>
+                  <input type="email" name="email" id="email" class="form-control"  >
+                  <p id="emailErr"></p>
+                </div>
+                <div class="form-group">
+                  <label for="password1" id="label2">Password</label>
+                  <input type="password" name="password1" id="password1" class="form-control"  >
+                  <p id="passwordErr"></p>
+                </div>
+                <button type="submit" id="button1" class="btn btn-primary btn-block">Submit</button>
+              </form>
+              <br>
+              <br>
+
+        
+        
+                  
+         
+
+         
+          
+          
+          <!--/stories-->
+          
+          
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+         
+function printError(elemId, hintMsg,elemId2) {
+             document.getElementById(elemId).innerHTML = hintMsg;
+          // hintMsg.style.color="red"
+             elemId2.style.border="solid 2px red";
+       }
+       function printNError(elemId, hintMsg,elemId2) {
+             document.getElementById(elemId).innerHTML = hintMsg;
+             elemId2.style.border="solid 2px green";
+       }  
+    
+      
+       function validate(){
+          let emailV= document.getElementById("email");
+          let password1V=document.getElementById("password1");
+     
+          // let regex=/^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(\.[a-z]{2,3})?$/
+          // let regex1=/^([0-9]{3})([\.-]{0,1})([0-9]{3})([\.-]{0,1})([0-9]{4})$/
+     var email=emailV.value.trim();  
+     var password1=password1V.value.trim();
+   
+     var emailErr = passwordErr = true;
+          
+      if(email == "") {
+      printError("emailErr", "Enter your email address",emailV);
+        } else {
+      // Regular expression for basic email validation
+        var regex=/^\S+@\S+\.\S+$/;
+              // var regex = /^\S+@\S+\.\S+$/;
+           if(regex.test(email) === false) {
+          printError("emailErr", "Enter a valid email address",emailV);
+         } else{
+          printNError("emailErr", "",emailV);
+          emailErr = false;
+        }
+       }
+
+
+
+  if(password1 == "") {
+      printError("passwordErr", "Enter your password",password1V);
+  } else {
+      // var regex = /^[1-9]\d{9}$/
+      if(password1.length<8) {
+          printError("passwordErr", "Password is less than 8",password1V);
+          alert("Password Must Contain Minimum 8 characters")
+      } else{
+          printNError("passwordErr", "",password1V);
+          passwordErr = false;
+      }
+    }
+
+
+
+    
+
+
+
+  if((emailErr || passwordErr ) == true) {
+      console.log(emailErr);
+      console.log(passwordErr);
+     return false;
+  } 
+ }
+    </script>
+
+
+	</body>
+</html>

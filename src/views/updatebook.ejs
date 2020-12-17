@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="/css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      
+      <a href="<%=nav[6].link%>" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="<%=nav[4].link%>"><%=nav[4].name%></a>
+        </li>
+        <li>
+          <a href="<%=nav[0].link%>"><%=nav[0].name%></a>
+        </li>
+        <li>
+          <a href="/">Logout</a>
+        </li>
+        
+       
+      </ul>
+    
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Update Book
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          
+     
+          <!--/stories-->
+          <form  method="POST" action='/books/update/add/<%=id%>'  id="form"  onsubmit="return validate()">
+            <div class="form-group">
+                <label >Title</label>
+                <input type="text" name="title" placeholder="Type Title Of Book" id="title" class="form-control"  >
+                <p id="titleErr"></p>
+            </div>
+      
+            <div class="form-group">
+                <label >Author</label>
+                <input type="text" name="author" placeholder="Type Author Of Book" id="author" class="form-control"  >
+                <p id="authorErr"></p>
+            </div>
+            
+            <div class="form-group">
+                <label >Genre</label>
+                <input type="text" name="genre" placeholder="Type Genre Of Book"  id="genre" class="form-control" accept="text" >
+                <p id="genreErr"></p>
+                      
+            </div>
+            <div class="form-group">
+                <label >Image</label>
+                <input type="file" name="image" id="file" class="form-control" onchange="showFiles()" accept="image/*">
+                <p id="imgErr"></p>
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary btn-block"> ADD</button>
+</form>
+<br>
+<br>  
+
+          <!--/stories-->
+          
+          
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+
+    <script>
+
+// function showFiles(){
+//             let inputField=document.getElementById("file");
+//             let file=inputField.files;
+//             let fileReader=new FileReader;
+//         fileReader.onload=function(event){
+//             let ImgUrl=fileReader.result;
+//             $("preview").attr("src",'${imageurl}')
+//         }
+//         fileReader.readAsDataURL(file[0]);
+// }
+
+function printError(elemId, hintMsg,elemId2) {
+             document.getElementById(elemId).innerHTML = hintMsg;
+          // hintMsg.style.color="red"
+             elemId2.style.border="solid 2px red";
+}
+
+
+function printNError(elemId, hintMsg,elemId2) {
+             document.getElementById(elemId).innerHTML = hintMsg;
+             elemId2.style.border="solid 2px green";
+}  
+    
+      
+function validate(){
+ 
+    var titleV= document.getElementById("title");
+    var authorV=document.getElementById("author");
+    var genreV=document.getElementById("genre");
+    var imgV=document.getElementById("file");
+         
+     var title=titleV.value.trim();  
+     var author=authorV.value.trim();
+     var genre=genreV.value.trim();
+     var img=imgV.value;
+     var titleErr = authorErr = genreErr = imgErr= true;
+     
+  
+      if(title == "") {
+      printError("titleErr", "Enter your title",titleV);
+        } else {
+      
+          printNError("titleErr", "",titleV);
+          titleErr = false;
+        }
+
+
+
+       if(author == "") {
+      printError("authorErr", "Enter your author",authorV);
+      } else {
+     
+          printNError("authorErr", "",authorV);
+          authorErr = false;
+      }
+     
+
+
+     
+
+
+  
+
+  if(genre == "") {
+      printError("genreErr", "Enter the Genre",genreV);
+  } else {
+      
+          printNError("genreErr", "",genreV);
+          genreErr = false;
+      }
+
+      if(img == "") {
+      printError("imgErr", "Enter the image",imgV);
+  } else {
+      
+          printNError("imgErr", "",imgV);
+          imgErr = false;
+      }
+    
+
+
+
+     
+
+  
+
+
+
+
+  if((titleErr || authorErr || genreErr || imgErr) == true) {
+     return false;
+  } else {
+      // Creating a string from input data for preview
+      var dataPreview = "You've entered the following details: \n" +
+                        "title: " + title + "\n" +
+                        "author: " + author + "\n" ;
+     
+      // Display input data in a dialog box before submitting the form
+      alert(dataPreview);
+      
+  
+       }
+}
+
+
+          
+      
+           
+              
+   </script>
+	</body>
+</html>
